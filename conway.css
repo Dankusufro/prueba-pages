@@ -1,0 +1,19 @@
+.viva {
+    color: rgb(27, 202, 11);
+    background-color: #18cc09;
+    border-color: #126006;
+}
+.muerta {
+    color: #707070;
+    background-color: #606060;
+    border-color: #404040;
+}
+.celula {
+    padding: 7px;
+}
+.ambiente {
+    table-layout: fixed;
+    border-spacing: 2px;
+    padding: 7px;
+
+}

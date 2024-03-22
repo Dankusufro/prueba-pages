@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tutorial 2 JavaScript</title>
+    <script type="text/javascript" src="./class.Conway.js"></script>
+    <script>
+        function proximoPaso() {
+            x.proximoturno();
+            document.getElementById("grilla").innerHTML = "";
+            x.inyectaAmbiente("grilla");
+        }
+        let ciclo = false;
+        function automatico(){
+            ciclo=!ciclo
+            proSigue(200)
+        }
+
+        function proSigue(milisecs) {
+            let botonsiguiente=document.getElementById("botonSiguiente")
+            let boton=document.getElementById("botonAutomatico")
+            if (ciclo) {
+                botonsiguiente.setAttribute("disabled","true")
+                boton.innerText= "Detener Avance"
+                proximoPaso();
+                setTimeout(proSigue, milisecs, milisecs)
+            }else{
+                botonsiguiente.removeAttribute("disabled")
+                boton.innerText= "Avance Automatico"
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="grilla"></div>
+<script>
+    let x = new Conway(40, 40);
+    x.agregaPatron(8, 4, "sapo");
+    x.agregaPatron(10, 15, "pentaDecatlon");
+    x.agregaPatron(30, 15, "planeador");
+    x.agregaPatron(25, 30, "octogono");
+    x.inyectaAmbiente("grilla");
+</script>
+
+<button id="botonSiguiente" onclick="proximoPaso()">Siguiente</button>
+<button id="botonAutomatico" onclick="automatico()">Avance automatico</button>
+</body>
+</html>
