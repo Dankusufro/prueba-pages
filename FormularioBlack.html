@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a completar formulario</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10%;
+            font-family: Arial, sans-serif;
+            background-color: #1a2035;
+            color: #ffffff; /* Texto blanco */
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        h2 {
+            color: #47978e;
+            font-size: 36px;
+            font-family: Roboto, "Comic Sans MS";
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 18px;
+            color: #ffffff;
+            line-height: 1.9;
+            margin: 10px 0;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .content {
+            background-color: #283650;
+            padding: 40px 20px 30px 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #9bd63e;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .last-image {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+<table  width="600">
+    <tr>
+        <td align="center" bgcolor="#1a2035">
+            <table class="content" width="600">
+                <tr>
+                    <td>
+                        <img class="logo" src="https://raw.githubusercontent.com/Dankusufro/hola/main/LogoHapp.png"
+                             alt="Happ Rent Logo" width="425">
+
+                        <h2>¡Te invitamos a completar <br> el formulario de tu nuevo arriendo!</h2>
+                        <p>Hola $[{nombreArrendatario}] </p>
+                        <p>$[{nombreArrendador}] te invita a </p>
+                        <p>tómarte un momento para completar nuestro formulario.</p>
+                        <p>¡Tu información es importante para nosotros!</p>
+                        <a class="cta-button" href="$[{[VITE_SERVER_URL]}]/formularioInvitado/$[{tokenFormulario}]">Completar Formulario</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="last-image" src="https://raw.githubusercontent.com/Dankusufro/hola/main/LogoPlanoFlecha.png"
+                             alt="Happ Rent Logo Plano" width="60">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>
